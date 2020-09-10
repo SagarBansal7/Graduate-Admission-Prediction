@@ -11,24 +11,24 @@ We are looking at the university data and different admission scores, how it’s
 
 #### Data Summary
 
-> For the graduate admission prediction dataset, following is the brief description of the dataset and its features:
+> **For the graduate admission prediction dataset, following is the brief description of the dataset and its features:**
 > 
-> Quantitative features: 
+> **Quantitative features:**
 > GRE Score - ranges from 260 to 340, integer data type.
 > TOEFL Score - ranges from 0 to 120, integer data type.
 > SOP strength - ranges from 1 to 5, decimal data type.
 > LOR strength - ranges from 1 to 5, decimal data type.
 > CGPA - maximum 10, decimal data type.
 > 
-> Qualitative feature: 
+> **Qualitative feature:** 
 > Research Experience – 0 or 1.
 > University Rating - ranges from 1 to 5.
 > 
-> Total number of independent features: 7.
+> **Total number of independent features**: 7.
 > 
-> Total number of observations: 400.
+> **Total number of observations**: 400.
 > 
-> Target Variable: Chance of Admit - ranges from 0 to 1, decimal data type.
+> **Target Variable**: Chance of Admit - ranges from 0 to 1, decimal data type.
 > 
 > (Source: https://www.kaggle.com/mohansacharya/graduate-admissions#Admission_Predict_Ver1.1.csv)
 
