@@ -42,7 +42,7 @@ In the next sections, we will start with the descriptive evaluation and visualiz
 
 First, we calculated averages and mediums of each score. The results are similar for both which means that our data is symmetric. This table below also shows that average scores will give 72% chance of admission. Half of the average admissions include research paper. Median university rank is 3 out of 5. Standard deviation for TOEFL and GRE score shows that there is a dispersion (spread) in the scores, meaning that some admission scores submitted were much better and/or some worse than the average. CGPA scores have very low deviation meaning that they were consistent. 
 
-#### Summary Statistics of Graduate Admission
+#### Table 1: Summary Statistics of Graduate Admission
 
 ![Image 2](https://user-images.githubusercontent.com/37155988/92817880-11a62800-f395-11ea-86c0-d340afc44165.png)
 
