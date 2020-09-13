@@ -158,7 +158,7 @@ These intervals will help us in inferring the possible mean value range for diff
 
 Early on in our introduction to the data set we mentioned about the hypothesis to establish that higher university ranking, the higher the chance of admit. Now we will do a hypothesis test to establish the fact that there exists a relationship between University Ranking and Chance of Admit using one way ANOVA.  
 
-* For simplification, going forward, we will call University Ranking as UR, Chance of Admit as CoA! 
+For simplification, going forward, we will call University Ranking as UR, Chance of Admit as CoA! 
 
 For Hypothesis Testing, our first step is to create Null & Alternative hypothesis. 
 
@@ -186,5 +186,61 @@ From the above analysis of variance test (ANOVA), we can conclude that the highe
 
 We had to do some outside research for what regression method would be best and we decided to go with regression through the origin with no Beta-0 intercept. This is because it makes sense contextually that there should be no intercept for the chance of admit because if a student has 0 scores for the variables analyzed above his/her chance of admit would be zero. Moreover, after exploring the data and the relation between variables we found that students that are applying to higher ranked universities need higher scores for GRE. Therefore, we decided to try out an interaction term using University Rating with different variables. The interaction term between GRE Scores\*University Rating appeared to be the most significant. Below is the model initiated using R-studio.
 
- model = lm (`Chance of Admit` ~ 0 +`GRE Score`*University Rating + CGPA + LOR+ Research)
+    model = lm (`Chance of Admit` ~ 0 +`GRE Score`*University Rating + CGPA + LOR+ Research)
  
+![Table 8](https://user-images.githubusercontent.com/37155988/93025593-16552100-f5cd-11ea-865a-2dccdeb3f707.png)
+
+    Y = 0.0232654x1 + 0.1313719x2 – 0.1313719x3 – 0.3802179x4 + 0.0012303
+
+![Table 9](https://user-images.githubusercontent.com/37155988/93025594-16edb780-f5cd-11ea-9a35-e9f009f3d60c.png)
+
+Above we can see the out- put of R shows a highly significant F-test (p-value < 2.2\*10^-16) which tells us that this is a highly useful model for predicting the chance of admission. Moreover, the individual t-tests for our independent variables show that our predictors are highly significant at the alpha = .01 level. The adjusted R-squared of our Model shows that our model can predict the chances of admission with high precision by explaining approximately 99% of the observed variations in the chances of admissions in our dataset.  Next, we start checking for any Multicollinearities using the Vif function in R which represents the variance inflation factors of the model. Any Vif > 5 is usually representing that multicollinearity exists in our model. Below we can see that there is Multicollinearity. However, after doing some research we learnt that Multicollinearity is not always a problem. It is a problem when the global F-test shows a significant p-value and the individual t-tests are distorted. This is not our case because all the individual t-tests are very highly significant. Therefore, in this case Multicollinearity is not causing any problems to our model.
+
+![Table 10](https://user-images.githubusercontent.com/37155988/93025595-17864e00-f5cd-11ea-88a7-28952945f229.png)
+
+### Checking Observed values vs Predicted Values (Y vs Y-hat) and Model Assumption of Constant Variance
+
+#### Graph 6: Plot(Chance of Admit, model$fittedvalues)
+
+![Table 11](https://user-images.githubusercontent.com/37155988/93025596-17864e00-f5cd-11ea-8e97-0871c72c15b7.png)
+
+It is quite clear to us that the model can precisely predict the chances of admission between 0.8 and 0.9 (80% - 90%). In contrast, the model does poorly at predicting the chances of admission below 70%. In the diagram below we can also see that the unobserved variables which is known as residuals or predicted errors have a higher impact on lower chances of admission compared to the higher admissions. The problem of constant variance here known as heteroscedasticity is seen. This implies a misspecification of the model or that we should use some techniques such as logistic regression to transform some variables and go through the process of variance stabilization. This is some advanced statistics that we did not cover in class and hope to cover in upcoming stats courses. However, we believe there are some contextual reasons that may have caused this heteroscedasticity. Note, that the explained by variance of the model is extremely high.  One reason for heteroscedasticity is that our dataset and model do not encompass how determined or ambitious the student applying is. For instance, a student who has high scores on all tests and strong Letters of Recommendations is likely to seem to the recruiter as highly ambitious and the recruiter would highly admit the student. The high ambition of the student could have highly contributed to the chances of admission. This shows that there are some unobserved factors that have not been taken into account that contributes highly to the high chances of admission. Moreover, we know that beyond a certain threshold student will be admitted instantly. While students with lower scores will be admitted based on other factors that are only known to the recruiter. Also, this depends on the recruiter himself some recruiters value some factors more than other factors. Therefore, we kind of get a sense that the heteroscedasticity arising might not be from the model misspecification but could be from other factors that are not captured by the dataset.
+
+#### Graph 7: Plot(model$fittedvalues, model$residuals)
+
+![Table 12](https://user-images.githubusercontent.com/37155988/93025597-181ee480-f5cd-11ea-9e81-62c76286a401.png)
+
+#### Graph 8: Hist(model$residuals) Checking the assumption of Distribution of estimated errors
+
+![Table 13](https://user-images.githubusercontent.com/37155988/93025598-181ee480-f5cd-11ea-99e6-d0b00a6b252c.png)
+
+Here checking the distribution of the model residuals, we can see that it is fairly negatively skewed, and it is not satisfying the model assumption of normality. On the next page, we used the q-q norm function and we see a slight curvature which shows that it doesn’t satisfy the model assumption that errors are normally distributed (Graph 9 ). A QQ plot combines a normally distributed set of quantiles and if they are both normally distributed that means we should see a straight line. In our case we see a slight curvature which further enhances that the model assumption of the errors being normally distributed is violated.
+
+#### Graph 9: QQnorm Checking the assumption of Distribution of estimated errors
+
+![Table 14](https://user-images.githubusercontent.com/37155988/93025599-181ee480-f5cd-11ea-8f50-e14b7b5a077b.png)
+
+After some research we decided to transform some terms to try to satisfy the model assumption. Therefore, our new model is model2 = lm (`Chance of Admit`~ 0 + LOR + CGPA +log (`GRE Score`\*`University Rating`)). By adding the term log () to the interaction term we see in Graph 10 is that the curvature is slightly fixed. Also, all the p-values for the variables and the global F – test are significant with a slightly lower adjusted R-square of .98. This means that our model explains 98% of the observed variations in the chances of predictions of admitting students.
+
+#### Graph 10: QQnorm with the log() term
+
+![Table 15](https://user-images.githubusercontent.com/37155988/93025600-181ee480-f5cd-11ea-8590-cc58287b034a.png)
+
+### Conclusion and Future Directions
+
+Based on the above findings, or the analysis that we have done/presented, we can infer the below mentioned info: 
+
+●	We are 95% confident that the mean of all chance of admits lies between 70.63% and 73.37% i.e., many more than half of the students who apply get an admit.
+●	Using ANOVA, we concluded that higher the GRE Score, more are the chances of a student getting admitted to a high university ranking!
+●	CGPA, GRE Score, LOR, and Research comes out to be the most important factors among all the variables on which the chances of admission depend.
+●	Since all of these have a positive relationship with the Chance of Admission, higher the independent factors, more will be the Chance of Admission.
+
+Our report is open to use for future research as the data may change and we may find more data features with all of them that were given to us. We would suggest to collect data that involves some of the following:
+●	The dataset didn’t include the circumstances in which a student applied in. For instance, a student can be privileged in terms of financial resources. He may have used his family reputation or wealth in getting an admit. This isn’t captured in the dataset which could be a reason for inaccuracy percent of the model.
+●	In addition, two universities with the same rating can have a totally different process of student selection. Some universities focus more on the CGPA of the candidate and others emphasize on the GRE score. So, having the University name and selection criteria for each record in the dataset can truly help us in further digging into the patterns and going more granular.
+
+### References 
+
+●	Mohan S Acharya, Asfia Armaan, Aneeta S Antony: A Comparison of Regression Models for Prediction of Graduate Admissions, IEEE International Conference on Computational Intelligence in Data Science 2019
+●	Jaggia, Sanjiv, and Alison Kelly. 2019. Business statistics: communicating with numbers, 3rd edition.
+●	Statistics for Managers Using Microsoft Excel, 8th edition, by David M. Levine, David F. Stephan, and Kathryn A. Szabat.
