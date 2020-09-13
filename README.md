@@ -170,7 +170,7 @@ and μ2 = Average of Chances of Admit
 For this hypothesis, we will use α = 0.05 = Significance Value and now, we will check which of the hypothesis is true using ANOVA! We will be doing an ANOVA test between University Rating and Chance of Admit.  
 
 #### Table 7: Summary Statistics of Graduate Admission
-![Table 7 a](https://user-images.githubusercontent.com/37155988/93023421-dede7880-f5bc-11ea-8edd-ea0f5016ec80.png)
+![Table 7 a](https://user-images.githubusercontent.com/37155988/93024790-01758f00-f5c7-11ea-88bc-310b37a11380.png)
 
 ![Table 7 b](https://user-images.githubusercontent.com/37155988/93023426-e867e080-f5bc-11ea-80a6-c437586bd9d8.png)
 
