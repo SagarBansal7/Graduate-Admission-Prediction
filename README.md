@@ -51,11 +51,11 @@ Since the average university rank is 3 and the university rank 3 shows the highe
 
 #### Graph 1: Histogram for University Rating
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/3#issue-700596979
+![Graph 1](https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png)
 
 #### Table 2: Average profiles with highest and lowest chance of admits for 3 and 5 rated universities.
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/9#issue-700597359
+![Table 2](https://user-images.githubusercontent.com/37155988/93022822-2c58e680-f5b9-11ea-8843-d6803934eff8.png)
 
 Following table 3 showing values at the 90th percentile for each feature. For universities with rating “3”, it suggests that the 325.6 is greater than the 90 percent of student’s GRE scores. Similarly, 112 for TOEFL score, 4 for SOP Strength, 4.5 for LOR strength, 9.04 for CGPA and 1 for Research.  For the five rated universities, the values are significantly high. It is 338.9 for GRE score, 119 for TOEFL score, 5 for SOP Strength, 5 for LOR strength, 9.778 for CGPA and 1 for Research.  It is clear that scores have to be higher for higher ranked universities. 
 
@@ -63,11 +63,11 @@ Note that, 90th percentile for 3 and 5 rated universities is different than havi
 
 #### Table 3: Student profiles at 90th percentile of chance of admit for 3 and 5 rated universities 
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/10#issue-700597423
+![Table 3](https://user-images.githubusercontent.com/37155988/93022839-35e24e80-f5b9-11ea-8094-c18d11bcfa16.png)
 
 #### Graph 2: Average TOEFL scores and average GRE scores by university rank
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/4#issue-700597049
+![Graph 2](https://user-images.githubusercontent.com/37155988/93022773-edc32c00-f5b8-11ea-9de6-3bb249f25306.png)
 
 The Graph 1 above displaying two admission measures TOEFL and GRE exams from the 400 samples that shows that there is a definite increase of needed scores to be admitted to a higher ranked university.  However, our team decided to exclude the independent variable TOEFL Scores as we believe that not all students are required to take the TOEFL test to join Graduate School. We based this off of our experience when applying to different Grad Schools. TOEFL is usually only required for Undergraduate admissions which is not the case of our dataset. It makes sense to exclude TOEFL score as we will see later on in our methodology section that it proved not to be a useful predictor of our model. Moreover, the variations in the TOEFL score distorts some of our model assumptions such as the assumption of the constant variance.
 
@@ -79,27 +79,27 @@ The diagram below shows GRE scores to Chance of Admission that shows us that the
 
 #### Graph 3: Scatter plot between chance of admit and GRE score
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/5#issue-700597100
+![Graph 3](https://user-images.githubusercontent.com/37155988/93022781-f87dc100-f5b8-11ea-8ee7-68cf9a2c3a08.png)
 
 The diagram below shows TOEFL scores to Chance of Admission that shows the higher the score the higher the chance of admission. However, we can see the extreme variations in the TOEFL scores with regards to the Chance of Admit which solidifies our decision statistically for not using it as a variable to predict the chance of admit.
 
 #### Graph 4: Scatter plot between chance of admit and TOEFL score
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/6#issue-700597134
+![Graph 4](https://user-images.githubusercontent.com/37155988/93022788-00d5fc00-f5b9-11ea-83c4-97a9270494a4.png)
 
 The diagram below shows a scatterplot of x = CGPA and y = Chance of Admit. We can see a high correlation between CGPA and the chance of admit. We see an interesting trend here as the CGPA gets higher we see a lower variation in the chance of admit. Contextually speaking this makes sense because universities usually require a range of CGPA. For example, universities won’t require a specific CGPA like exactly 9 or 10 to admit students they ask to have a CGPA of 9 or above. Therefore, a CGPA of 9 could have the same chance of admit as a student with a 9.5 CGPA. Moreover, the reason why sees less variations in the chance of admit could also be because the number of students with a high CGPA are less than students with an average or lower CGPA. Overall, we think CGPA will be a good predictor for our model because of our experience and we will see below the correlation matrix shows the highest correlation with the chance of admit (0.87328910).
 
 #### Graph 5: Scatter plot between chance of admit and CGPA
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/7#issue-700597187
+![Graph 5](https://user-images.githubusercontent.com/37155988/93022798-0895a080-f5b9-11ea-92bf-55b62d8ed4b2.png)
 
 #### Graph 6: Correlation Matrix of Variables
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/8#issue-700597230
+![Graph 6](https://user-images.githubusercontent.com/37155988/93022801-11867200-f5b9-11ea-8a07-e9e5939a215f.png)
 
 #### Table 4: Step Wise Regression Analysis
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/11#issue-700597468
+![Table 4](https://user-images.githubusercontent.com/37155988/93022846-3ed32000-f5b9-11ea-921a-f4fadb78aa6e.png)
 
 Step Wise Analysis is a process of fitting regression model in which the choice of predictive model is carried out by an automatic process.
 
@@ -111,7 +111,7 @@ Remaining 20% of the variation can include other factors such as Ambition of a s
 
 #### Table 5: Coefficient Summary for Step Wise Analysis
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/12#issue-700597511
+![Table 5](https://user-images.githubusercontent.com/37155988/93022852-485c8800-f5b9-11ea-8fdc-cfea0e13138e.png)
 
 In the table 5, we can observe the coefficient value (Unstandardized B) of each of the independent variables. 
 Considering that we have an equation as Y = m1x1 + m2x2 + m3x3 + m4x4 + c
@@ -133,7 +133,7 @@ Here, we will construct the confidence interval for each of the independent feat
 
 #### Table 6: Summary Statistics of Graduate Admission
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/13#issue-700597541
+![Table 6](https://user-images.githubusercontent.com/37155988/93022859-50b4c300-f5b9-11ea-84b0-125c26deea17.png)
 
 **Interpretations:**
 
@@ -171,9 +171,9 @@ For this hypothesis, we will use α = 0.05 = Significance Value and now, we will
 
 #### Table 7: Summary Statistics of Graduate Admission
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/14#issue-700602277
+![Table 7 a](https://user-images.githubusercontent.com/37155988/93023421-dede7880-f5bc-11ea-8edd-ea0f5016ec80.png)
 
-https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/15#issue-700602311
+![Table 7 b](https://user-images.githubusercontent.com/37155988/93023426-e867e080-f5bc-11ea-80a6-c437586bd9d8.png)
 
 From the above ANOVA analysis, we can observe that p-value = 1.2099E-198.
 
