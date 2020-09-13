@@ -54,7 +54,8 @@ Since the average university rank is 3 and the university rank 3 shows the highe
 <img src="https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png" width="400">
 
 #### Table 2: Average profiles with highest and lowest chance of admits for 3 and 5 rated universities.
-![Table 2](https://user-images.githubusercontent.com/37155988/93022822-2c58e680-f5b9-11ea-8843-d6803934eff8.png)
+
+![Table 2](https://user-images.githubusercontent.com/37155988/93023953-99bc4580-f5c0-11ea-943b-7719378506fe.png)
 
 Following table 3 showing values at the 90th percentile for each feature. For universities with rating “3”, it suggests that the 325.6 is greater than the 90 percent of student’s GRE scores. Similarly, 112 for TOEFL score, 4 for SOP Strength, 4.5 for LOR strength, 9.04 for CGPA and 1 for Research.  For the five rated universities, the values are significantly high. It is 338.9 for GRE score, 119 for TOEFL score, 5 for SOP Strength, 5 for LOR strength, 9.778 for CGPA and 1 for Research.  It is clear that scores have to be higher for higher ranked universities. 
 
@@ -66,9 +67,9 @@ Note that, 90th percentile for 3 and 5 rated universities is different than havi
 
 #### Graph 2: Average TOEFL scores and average GRE scores by university rank
 
-![Graph 2](https://user-images.githubusercontent.com/37155988/93022773-edc32c00-f5b8-11ea-9de6-3bb249f25306.png)
+<img src="https://user-images.githubusercontent.com/37155988/93022773-edc32c00-f5b8-11ea-9de6-3bb249f25306.png" width="500">
 
-The Graph 1 above displaying two admission measures TOEFL and GRE exams from the 400 samples that shows that there is a definite increase of needed scores to be admitted to a higher ranked university.  However, our team decided to exclude the independent variable TOEFL Scores as we believe that not all students are required to take the TOEFL test to join Graduate School. We based this off of our experience when applying to different Grad Schools. TOEFL is usually only required for Undergraduate admissions which is not the case of our dataset. It makes sense to exclude TOEFL score as we will see later on in our methodology section that it proved not to be a useful predictor of our model. Moreover, the variations in the TOEFL score distorts some of our model assumptions such as the assumption of the constant variance.
+The Graph 1 above displaying two admission measures TOEFL and GRE exams from the 400 samples that shows that there is a definite increase of needed scores to be admitted to a higher ranked univers  e School. We based this off of our experience when applying to different Grad Schools. TOEFL is usually only required for Undergraduate admissions which is not the case of our dataset. It makes sense to exclude TOEFL score as we will see later on in our methodology section that it proved not to be a useful predictor of our model. Moreover, the variations in the TOEFL score distorts some of our model assumptions such as the assumption of the constant variance.
 
 ### Methodology
 
@@ -84,21 +85,21 @@ The diagram below shows TOEFL scores to Chance of Admission that shows the highe
 
 #### Graph 4: Scatter plot between chance of admit and TOEFL score
 
-![Graph 4](https://user-images.githubusercontent.com/37155988/93022788-00d5fc00-f5b9-11ea-83c4-97a9270494a4.png)
+<img src="https://user-images.githubusercontent.com/37155988/93022788-00d5fc00-f5b9-11ea-83c4-97a9270494a4.png" width="500">
 
 The diagram below shows a scatterplot of x = CGPA and y = Chance of Admit. We can see a high correlation between CGPA and the chance of admit. We see an interesting trend here as the CGPA gets higher we see a lower variation in the chance of admit. Contextually speaking this makes sense because universities usually require a range of CGPA. For example, universities won’t require a specific CGPA like exactly 9 or 10 to admit students they ask to have a CGPA of 9 or above. Therefore, a CGPA of 9 could have the same chance of admit as a student with a 9.5 CGPA. Moreover, the reason why sees less variations in the chance of admit could also be because the number of students with a high CGPA are less than students with an average or lower CGPA. Overall, we think CGPA will be a good predictor for our model because of our experience and we will see below the correlation matrix shows the highest correlation with the chance of admit (0.87328910).
 
 #### Graph 5: Scatter plot between chance of admit and CGPA
 
-![Graph 5](https://user-images.githubusercontent.com/37155988/93022798-0895a080-f5b9-11ea-92bf-55b62d8ed4b2.png)
+<img src="https://user-images.githubusercontent.com/37155988/93022798-0895a080-f5b9-11ea-92bf-55b62d8ed4b2.png" width="500">
 
 #### Graph 6: Correlation Matrix of Variables
 
-![Graph 6](https://user-images.githubusercontent.com/37155988/93022801-11867200-f5b9-11ea-8a07-e9e5939a215f.png)
+<img src="https://user-images.githubusercontent.com/37155988/93022801-11867200-f5b9-11ea-8a07-e9e5939a215f.png" width="500">
 
 #### Table 4: Step Wise Regression Analysis
 
-![Table 4](https://user-images.githubusercontent.com/37155988/93022846-3ed32000-f5b9-11ea-921a-f4fadb78aa6e.png)
+<img src="https://user-images.githubusercontent.com/37155988/93022846-3ed32000-f5b9-11ea-921a-f4fadb78aa6e.png" width="500">
 
 Step Wise Analysis is a process of fitting regression model in which the choice of predictive model is carried out by an automatic process.
 
