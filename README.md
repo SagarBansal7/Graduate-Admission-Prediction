@@ -51,10 +51,9 @@ Since the average university rank is 3 and the university rank 3 shows the highe
 
 #### Graph 1: Histogram for University Rating
 
-![Graph 1](https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png)
+![Graph 1](https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png | width = 300)
 
 #### Table 2: Average profiles with highest and lowest chance of admits for 3 and 5 rated universities.
-
 ![Table 2](https://user-images.githubusercontent.com/37155988/93022822-2c58e680-f5b9-11ea-8843-d6803934eff8.png)
 
 Following table 3 showing values at the 90th percentile for each feature. For universities with rating “3”, it suggests that the 325.6 is greater than the 90 percent of student’s GRE scores. Similarly, 112 for TOEFL score, 4 for SOP Strength, 4.5 for LOR strength, 9.04 for CGPA and 1 for Research.  For the five rated universities, the values are significantly high. It is 338.9 for GRE score, 119 for TOEFL score, 5 for SOP Strength, 5 for LOR strength, 9.778 for CGPA and 1 for Research.  It is clear that scores have to be higher for higher ranked universities. 
