@@ -198,7 +198,7 @@ Above we can see the out- put of R shows a highly significant F-test (p-value < 
 
 <img src="https://user-images.githubusercontent.com/37155988/93025595-17864e00-f5cd-11ea-88a7-28952945f229.png" width="500">
 
-### Checking Observed values vs Predicted Values (Y vs Y-hat) and Model Assumption of Constant Variance
+#### Checking Observed values vs Predicted Values (Y vs Y-hat) and Model Assumption of Constant Variance
 
 #### Graph 6: Plot(Chance of Admit, model$fittedvalues)
 
