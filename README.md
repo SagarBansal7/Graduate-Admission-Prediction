@@ -51,7 +51,7 @@ Since the average university rank is 3 and the university rank 3 shows the highe
 
 #### Graph 1: Histogram for University Rating
 
-![Graph 1](https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png | width = 300)
+![Graph 1](https://user-images.githubusercontent.com/37155988/93022763-df751000-f5b8-11ea-835f-a623c3df386d.png | width=300)
 
 #### Table 2: Average profiles with highest and lowest chance of admits for 3 and 5 rated universities.
 ![Table 2](https://user-images.githubusercontent.com/37155988/93022822-2c58e680-f5b9-11ea-8843-d6803934eff8.png)
