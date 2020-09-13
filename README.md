@@ -48,3 +48,144 @@ First, we calculated averages and mediums of each score. The results are similar
 ![Image 2](https://user-images.githubusercontent.com/37155988/92817880-11a62800-f395-11ea-86c0-d340afc44165.png)
 
 Since the average university rank is 3 and the university rank 3 shows the highest frequency compared to other university ranks shown in the figure below. We decided to look for the average scores’ person needs to have a higher chance (90%) of being admitted and what are the lower scores with less chances of being admitted (36% chance). We also looked at the higher rated university scores, what is needed to be admitted to such university and what scores are required. The table below shows that with 90% chance of admission the scores are the same for university that is ranked 3 and 5. We noticed that the chance of admission is much less when there is no research submitted for admission. It is also showing that the highest chance of admission (97%) for the highest ranked university (5 out of 5) requires the highest scores for everything. In other words, whoever receives the highest scores plus submits a research work has almost 97% chance of being admitted. 
+
+#### Graph 1: Histogram for University Rating
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/3#issue-700596979
+
+#### Table 2: Average profiles with highest and lowest chance of admits for 3 and 5 rated universities.
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/9#issue-700597359
+
+Following table 3 showing values at the 90th percentile for each feature. For universities with rating “3”, it suggests that the 325.6 is greater than the 90 percent of student’s GRE scores. Similarly, 112 for TOEFL score, 4 for SOP Strength, 4.5 for LOR strength, 9.04 for CGPA and 1 for Research.  For the five rated universities, the values are significantly high. It is 338.9 for GRE score, 119 for TOEFL score, 5 for SOP Strength, 5 for LOR strength, 9.778 for CGPA and 1 for Research.  It is clear that scores have to be higher for higher ranked universities. 
+
+Note that, 90th percentile for 3 and 5 rated universities is different than having the 90% chance of admission for 3 and 5 rated universities. The latter is the value of our target variable as “Chances of Admit” tells us the percentage. Whereas 90th percentile is the calculation done on all of the values and getting the one having 90% of the values below it.
+
+#### Table 3: Student profiles at 90th percentile of chance of admit for 3 and 5 rated universities 
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/10#issue-700597423
+
+#### Graph 2: Average TOEFL scores and average GRE scores by university rank
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/4#issue-700597049
+
+The Graph 1 above displaying two admission measures TOEFL and GRE exams from the 400 samples that shows that there is a definite increase of needed scores to be admitted to a higher ranked university.  However, our team decided to exclude the independent variable TOEFL Scores as we believe that not all students are required to take the TOEFL test to join Graduate School. We based this off of our experience when applying to different Grad Schools. TOEFL is usually only required for Undergraduate admissions which is not the case of our dataset. It makes sense to exclude TOEFL score as we will see later on in our methodology section that it proved not to be a useful predictor of our model. Moreover, the variations in the TOEFL score distorts some of our model assumptions such as the assumption of the constant variance.
+
+### Methodology
+
+First, we start off by exploring the correlation of our independent variables with our dependent variable “Chance of Admit” by using some scatterplots and correlation matrices. 
+
+The diagram below shows GRE scores to Chance of Admission that shows us that the higher the score the higher the chance to be admitted.
+
+#### Graph 3: Scatter plot between chance of admit and GRE score
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/5#issue-700597100
+
+The diagram below shows TOEFL scores to Chance of Admission that shows the higher the score the higher the chance of admission. However, we can see the extreme variations in the TOEFL scores with regards to the Chance of Admit which solidifies our decision statistically for not using it as a variable to predict the chance of admit.
+
+#### Graph 4: Scatter plot between chance of admit and TOEFL score
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/6#issue-700597134
+
+The diagram below shows a scatterplot of x = CGPA and y = Chance of Admit. We can see a high correlation between CGPA and the chance of admit. We see an interesting trend here as the CGPA gets higher we see a lower variation in the chance of admit. Contextually speaking this makes sense because universities usually require a range of CGPA. For example, universities won’t require a specific CGPA like exactly 9 or 10 to admit students they ask to have a CGPA of 9 or above. Therefore, a CGPA of 9 could have the same chance of admit as a student with a 9.5 CGPA. Moreover, the reason why sees less variations in the chance of admit could also be because the number of students with a high CGPA are less than students with an average or lower CGPA. Overall, we think CGPA will be a good predictor for our model because of our experience and we will see below the correlation matrix shows the highest correlation with the chance of admit (0.87328910).
+
+#### Graph 5: Scatter plot between chance of admit and CGPA
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/7#issue-700597187
+
+#### Graph 6: Correlation Matrix of Variables
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/8#issue-700597230
+
+#### Table 4: Step Wise Regression Analysis
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/11#issue-700597468
+
+Step Wise Analysis is a process of fitting regression model in which the choice of predictive model is carried out by an automatic process.
+
+From the above table 4, we can see a Stepwise Analysis to figure out which are the most important variables which impacts the chance of admit and to what extent. To run a step wise analysis, we consider “Chance of Admit” as the dependent variable, while remainder of the factors are considered as independent variables. From the Table 4, we can see that we have CGPA, GRE Score, LOR, and Research as the most important variables on which the Chances of Admit depends. Again, if we look at the Table 4, and if we see the second column R square, we can interpret that CGPA explains 76.2% of variation in Chance of Admit making CGPA the most important factor while calculating chances of admission. 
+
+Four of the variables combined help is explaining the variation by ~80% which is significantly high and thus, tells us that we have a good chance of predicting the model. 
+
+Remaining 20% of the variation can include other factors such as Ambition of a student or maybe, other subjective factors which we don’t have the data for. Further Market Research study will help us to enable more insightful actions/recommendations to build an even robust model.
+
+#### Table 5: Coefficient Summary for Step Wise Analysis
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/12#issue-700597511
+
+In the table 5, we can observe the coefficient value (Unstandardized B) of each of the independent variables. 
+Considering that we have an equation as Y = m1x1 + m2x2 + m3x3 + m4x4 + c
+
+x1 = GRE Score
+x2 = LOR
+x3 = CGPA
+x4 = Research 
+
+The sign of Unstandardized B – gives us the direction of the relationship independent variables has with the dependent variables. Since, all the independent variables are positive, this implies that they have a positive impact on the Chance of Admit. 
+
+Basis the above equation, we can come up with an equation such as: 
+
+**Chance of Admit = 0.003*GRE + 0.023*LOR + 0.134*CGPA + 0.025*Research**
+
+**a) Confidence Interval**
+
+Here, we will construct the confidence interval for each of the independent feature which are significant based on the previous Step Wise Analysis we performed as well as the target variable. Those features are GRE Score, LOR, CGPA and Research. We know from the Table 1, the mean for each of them. They are 316.8, 3.5, 8.6 and 0.5 for GRE Score, LOR, CGPA and Research respectively. We then calculated the Margin of error with alpha as 0.05 (95% confidence level), Standard deviation (specific to each of them), and the sample size of 400.
+
+#### Table 6: Summary Statistics of Graduate Admission
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/13#issue-700597541
+
+**Interpretations:**
+
+1)	GRE Score: 
+At 5% significance level, we can say that the average population value of the GRE Score will lie in between 315.68 and 317.92. 
+
+2)	LOR:
+At 5% significance level, we can say that the average population value of the LOR will lie in between 3.41 and 3.59. 
+
+3)	CGPA:
+At 5% significance level, we can say that the average population value of the CGPA will lie in between 8.54 and 8.66. 
+
+4)	Research:
+At 5% significance level, we can say that the average population value of the Research will lie in between 0.45 and 0.55. 
+
+5)	Chance of Admit:
+At 5% significance level, we can say that the average population value of our target variable (Chance of Admit) will lie in between **70.63% and 73.37%**.
+
+These intervals will help us in inferring the possible mean value range for different samples we evaluate for the same population. In addition, we get an important insight about our target variable “Chance of Admit”. We noted that on average the mean of chance of admit varies between 70.63% and 73.37%. This is very important because the range is **significantly far from 50%** i.e., many more than half of the students have a good chance to get an admit from the university they apply and they actually get it. This information can also be used by the future applicants as a motivation to apply and expect to get an admit.
+
+**b) Hypothesis Testing/ANOVA**
+
+Early on in our introduction to the data set we mentioned about the hypothesis to establish that higher university ranking, the higher the chance of admit. Now we will do a hypothesis test to establish the fact that there exists a relationship between University Ranking and Chance of Admit using one way ANOVA.  
+
+* For simplification, going forward, we will call University Ranking as UR, Chance of Admit as CoA! 
+
+For Hypothesis Testing, our first step is to create Null & Alternative hypothesis. 
+
+H0 : μ1 = μ2 (There exists no relation whatsoever b/w UR and CoA)
+Ha : μ1 is not equal to μ2 (There exists a relationship b/w UR and CoA)
+where μ1 = Average of University Ranking
+and μ2 = Average of Chances of Admit
+
+For this hypothesis, we will use α = 0.05 = Significance Value and now, we will check which of the hypothesis is true using ANOVA! We will be doing an ANOVA test between University Rating and Chance of Admit.  
+
+#### Table 7: Summary Statistics of Graduate Admission
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/14#issue-700602277
+
+https://github.com/SagarBansal7/Graduate-Admission-Prediction/issues/15#issue-700602311
+
+From the above ANOVA analysis, we can observe that p-value = 1.2099E-198.
+
+Since our p-value is less than α, we will reject the null hypothesis and can call out that our result is statically significant. 
+
+Now, let’s go back a few steps and recall, what did we say in our Alternate Hypothesis (Ha), our alternate hypothesis calls out that μ1 is not equal to μ2 and hence, there exists a relation between University Ranking and Chance of Admit. 
+
+From the above analysis of variance test (ANOVA), we can conclude that the higher the university ranking, the higher the chances of admit.  
+
+**c) Regression Analysis**
+
+We had to do some outside research for what regression method would be best and we decided to go with regression through the origin with no Beta-0 intercept. This is because it makes sense contextually that there should be no intercept for the chance of admit because if a student has 0 scores for the variables analyzed above his/her chance of admit would be zero. Moreover, after exploring the data and the relation between variables we found that students that are applying to higher ranked universities need higher scores for GRE. Therefore, we decided to try out an interaction term using University Rating with different variables. The interaction term between GRE Scores\*University Rating appeared to be the most significant. Below is the model initiated using R-studio.
+
+ model = lm (`Chance of Admit` ~ 0 +`GRE Score`*University Rating + CGPA + LOR+ Research)
+ 
